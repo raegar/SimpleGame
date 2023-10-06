@@ -123,7 +123,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xRate: 0
   yRate: 0
-  zRate: 0
+  zRate: 90
 --- !u!114 &5616575364361651797
 MonoBehaviour:
   m_ObjectHideFlags: 0

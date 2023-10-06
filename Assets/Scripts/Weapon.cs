@@ -4,11 +4,11 @@ public class Weapon : MonoBehaviour
 {
     [SerializeField] private int damageAmount = 20; // Amount of damage this weapon deals
 
-    // OnCollisionEnter is called when this collider/rigidbody starts touching another rigidbody/collider
-    void OnCollisionEnter(Collision collision)
+    // OnTriggerEnter is called when this collider/rigidbody starts touching another rigidbody/collider
+    void OnTriggerEnter(Collider other)
     {
         // Check if the object we collided with has a Health component
-        Health enemyHealth = collision.gameObject.GetComponent<Health>();
+        Health enemyHealth = other.gameObject.GetComponent<Health>();
         
         if (enemyHealth != null)
         {

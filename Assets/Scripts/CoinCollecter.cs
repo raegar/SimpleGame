@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class CoinCollecter : MonoBehaviour
 {
-    private int coins = 0;
+    public int coins = 0;
 
     public int Coins
     {

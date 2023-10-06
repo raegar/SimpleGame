@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    public GameObject enemyPrefab; // Reference to the enemy prefab
+    public GameObject spawnPrefab; // Reference to the enemy prefab
     public float spawnInterval = 5.0f; // Time interval between spawns
     private float minX;
     private float maxX;
@@ -28,19 +28,19 @@ public class EnemySpawner : MonoBehaviour
             maxY = topRight.y;
             
         // Start the spawn coroutine
-        StartCoroutine(SpawnEnemies());
+        StartCoroutine(SpawnObjects());
     }
 
     // Coroutine to spawn enemies
-    IEnumerator SpawnEnemies()
+    IEnumerator SpawnObjects()
     {
         while (true)
         {
             // Generate a random position within camera bounds
             Vector2 spawnPosition = new Vector2(Random.Range(minX, maxX), Random.Range(minY, maxY));
 
-            // Instantiate the enemy at the random position
-            Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
+            // Instantiate the spawnable object at the random position
+            Instantiate(spawnPrefab, spawnPosition, transform.rotation);
 
             // Wait for the next spawn
             yield return new WaitForSeconds(spawnInterval);

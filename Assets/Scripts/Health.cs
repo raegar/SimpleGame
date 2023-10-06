@@ -3,7 +3,7 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
     [SerializeField] private int maxHealth = 100; // Maximum health
-    private int currentHealth; // Current health
+    public int currentHealth; // Current health
 
     // Start is called before the first frame update
     void Start()
